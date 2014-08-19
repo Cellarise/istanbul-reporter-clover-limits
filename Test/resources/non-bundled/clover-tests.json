@@ -1,0 +1,28 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2014-08-19T21:36:37.383Z",
+    "end": "2014-08-19T21:36:37.385Z",
+    "duration": 2
+  },
+  "failures": [
+    {
+      "title": "Coverage: non-bundled-file-2.js",
+      "fullTitle": "Coverage: C:\\Atlassian\\NPM\\istanbul-reporter-clover-limits\\Test\\resources\\non-bundled\\non-bundled-file-2.js",
+      "duration": 0,
+      "error": "Insufficient branch coverage: actual=50% required=60% (branches covered = 1 total branches = 2)\n"
+    }
+  ],
+  "passes": [
+    {
+      "title": "Coverage: non-bundled-file-1.js",
+      "fullTitle": "Coverage: C:\\Atlassian\\NPM\\istanbul-reporter-clover-limits\\Test\\resources\\non-bundled\\non-bundled-file-1.js",
+      "duration": 0
+    }
+  ],
+  "skipped": []
+}
