@@ -2,17 +2,17 @@
   "author": "John Barry",
   "name": "istanbul-reporter-clover-limits",
   "description": "An istanbul report implementation that produces a clover xml file and summary test coverage json file with configurable watermarks.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "git://github.com/Cellarise/istanbul-reporter-clover-limits.git"
   },
   "config": {
-    "build": "4",
-    "buildTimestamp": "2014-08-20T07:48:14.270+10:00",
+    "build": "7",
+    "buildTimestamp": "2014-08-20T17:49:10.425+10:00",
     "adminEmail": "admin@cellarise.com"
   },
-  "main": "./lib",
+  "main": "./lib/clover-limits.js",
   "dependencies": {
     "sloc": "^0.1.3",
     "mkdirp": "^0.5.0",
@@ -22,12 +22,12 @@
   "optionalDependencies": {},
   "devDependencies": {
     "yadda": "^0.10.14",
+    "gulp-tap": "^0.1.1",
+    "run-sequence": "^0.3.6",
     "gulp": "^3.8.6",
     "gulp-util": "^3.0.0",
     "gulp-mocha": "^0.5.2",
     "gulp-load": "^0.1.1",
-    "gulp-jsdoc-to-markdown": "^0.1.3",
-    "gulp-dust-compile-render": "^0.1.4",
     "gulp-concat": "^2.3.4",
     "gulp-rename": "^1.2.0",
     "gulp-istanbul-custom-reports": "^0.1.0"

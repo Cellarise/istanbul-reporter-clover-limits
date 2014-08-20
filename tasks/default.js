@@ -7,8 +7,6 @@ module.exports = function(gulp) {
     gulp.task('default', function(cb) {
         runSequence(
             'test',
-            'docs-pre',
-            'docs',
             cb);
     });
 };

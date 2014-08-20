@@ -3,7 +3,7 @@ Feature: Develop clover-style json report with configurable limits
   I can get clover-style json summary report for Atlassian Bamboo Test Mocha Parser with configurable limits
   So that I can get more efficient and accurate code coverage reporting
 
-  Scenario: Code coverage report with no source maps
+  Scenario: Code coverage report
 
     Given I have non-bundled Javascript files
     When I run coverage report on the files
