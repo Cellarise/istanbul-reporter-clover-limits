@@ -55,7 +55,7 @@ module.exports = (function() {
             expected.stats.start = '';
             expected.stats.end = '';
             expected.stats.duration = 1;
-            this.assert.equal(JSON.stringify(actual), JSON.stringify(expected));
+            this.assert.equal(JSON.stringify(actual, null, 2), JSON.stringify(expected, null, 2));
             done();
         });
 })();
