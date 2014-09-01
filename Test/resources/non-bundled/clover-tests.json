@@ -14,7 +14,7 @@
       "title": "Coverage: non-bundled-file-2.js",
       "fullTitle": "Coverage: C:\\Atlassian\\NPM\\istanbul-reporter-clover-limits\\Test\\resources\\non-bundled\\non-bundled-file-2.js",
       "duration": 0,
-      "error": "Insufficient branch coverage: actual=50% required=60% (branches covered = 1 total branches = 2)\n"
+      "error": "Insufficient branch coverage: actual=50% required=60% (branches covered = 1 total branches = 2)\nToo many statements skipped: actual=20% required=10% (statements skipped = 1 total statements = 5)\n"
     }
   ],
   "passes": [

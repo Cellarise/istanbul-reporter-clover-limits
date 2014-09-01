@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1409573991322" clover="3.2.0">
-	<project timestamp="1409573991322"  name="All Files" >
-		<metrics statements="9"  coveredstatements="8"  conditionals="2"  coveredconditionals="1"  methods="0"  coveredmethods="0"  elements="11"  coveredelements="9"  complexity="0"  packages="1"  files="2"  classes="2"  loc="14"  ncloc="12" />
+<coverage generated="1409579415966" clover="3.2.0">
+	<project timestamp="1409579415966"  name="All Files" >
+		<metrics statements="9"  coveredstatements="9"  conditionals="2"  coveredconditionals="1"  methods="0"  coveredmethods="0"  elements="11"  coveredelements="10"  complexity="0"  packages="1"  files="2"  classes="2"  loc="16"  ncloc="12" />
 		<package name="non-bundled" >
-			<metrics statements="9"  coveredstatements="8"  conditionals="2"  coveredconditionals="1"  methods="0"  coveredmethods="0" />
+			<metrics statements="9"  coveredstatements="9"  conditionals="2"  coveredconditionals="1"  methods="0"  coveredmethods="0" />
 			<file name="non-bundled-file-1.js"  path="C:\bamboo\SRC\131073\CELLARISE-MDCOVSM-JOB1\Test\resources\non-bundled\non-bundled-file-1.js" >
 				<metrics statements="4"  coveredstatements="4"  conditionals="0"  coveredconditionals="0"  methods="0"  coveredmethods="0" />
 				<line num="2"  count="1"  type="stmt" />
 				<line num="3"  count="1"  type="stmt" />
-				<line num="4"  count="10"  type="stmt" />
-				<line num="6"  count="1"  type="stmt" />
+				<line num="5"  count="10"  type="stmt" />
+				<line num="7"  count="1"  type="stmt" />
 			</file>
 			<file name="non-bundled-file-2.js"  path="C:\bamboo\SRC\131073\CELLARISE-MDCOVSM-JOB1\Test\resources\non-bundled\non-bundled-file-2.js" >
-				<metrics statements="5"  coveredstatements="4"  conditionals="2"  coveredconditionals="1"  methods="0"  coveredmethods="0" />
+				<metrics statements="5"  coveredstatements="5"  conditionals="2"  coveredconditionals="1"  methods="0"  coveredmethods="0" />
 				<line num="2"  count="1"  type="stmt" />
 				<line num="3"  count="1"  type="stmt" />
 				<line num="4"  count="1"  type="cond"  truecount="1"  falsecount="1" />
 				<line num="5"  count="1"  type="stmt" />
-				<line num="7"  count="0"  type="stmt" />
+				<line num="8"  count="1"  type="stmt" />
 			</file>
 		</package>
 	</project>

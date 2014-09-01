@@ -9,7 +9,6 @@ var gutil = require('gulp-util');
 var English = require('yadda').localisation.English;
 var assert = require('assert');
 var istanbul = require('gulp-istanbul-custom-reports');
-istanbul.registerReport(require('../../lib/clover-limits'));
 
 /* Feature: Develop clover-style json report with source-map support */
 module.exports = (function () {
@@ -24,6 +23,7 @@ module.exports = (function () {
         })
         .define("When I run coverage report on the files", function (done) {
             var COVERAGE_VARIABLE = '$$1cov_' + new Date().getTime() + '$$';
+            istanbul.registerReport(require('../../lib/clover-limits'));
 
             gulp.src(['Test/resources/non-bundled/**/*.js'])
                 .pipe(istanbul({coverageVariable: COVERAGE_VARIABLE})) // Covering files - must wait for finish event before continuing
@@ -46,10 +46,10 @@ module.exports = (function () {
                             reportOpts: {
                                 dir: 'Test/code-coverage/non-bundled',
                                 watermarks: {
-                                    statements: [ 50, 80 ],
-                                    lines: [ 50, 80 ],
-                                    functions: [ 50, 80],
-                                    branches: [ 60, 80 ]
+                                    statements: [ 50, 80, 10 ],
+                                    lines: [ 50, 80, 10 ],
+                                    functions: [ 50, 80, 10 ],
+                                    branches: [ 60, 80, 10 ]
                                 }
                             }
                         }))
