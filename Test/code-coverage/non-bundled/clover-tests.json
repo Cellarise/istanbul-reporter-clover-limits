@@ -5,14 +5,14 @@
     "passes": 1,
     "pending": 0,
     "failures": 1,
-    "start": "2014-08-21T10:33:45.405Z",
-    "end": "2014-08-21T10:33:45.406Z",
-    "duration": 1
+    "start": "2014-09-01T12:19:51.325Z",
+    "end": "2014-09-01T12:19:51.328Z",
+    "duration": 3
   },
   "failures": [
     {
       "title": "Coverage: non-bundled-file-2.js",
-      "fullTitle": "Coverage: C:\\Atlassian\\NPM\\istanbul-reporter-clover-limits\\Test\\resources\\non-bundled\\non-bundled-file-2.js",
+      "fullTitle": "Coverage: C:\\bamboo\\SRC\\131073\\CELLARISE-MDCOVSM-JOB1\\Test\\resources\\non-bundled\\non-bundled-file-2.js",
       "duration": 0,
       "error": "Insufficient branch coverage: actual=50% required=60% (branches covered = 1 total branches = 2)\n"
     }
@@ -20,7 +20,7 @@
   "passes": [
     {
       "title": "Coverage: non-bundled-file-1.js",
-      "fullTitle": "Coverage: C:\\Atlassian\\NPM\\istanbul-reporter-clover-limits\\Test\\resources\\non-bundled\\non-bundled-file-1.js",
+      "fullTitle": "Coverage: C:\\bamboo\\SRC\\131073\\CELLARISE-MDCOVSM-JOB1\\Test\\resources\\non-bundled\\non-bundled-file-1.js",
       "duration": 0
     }
   ],

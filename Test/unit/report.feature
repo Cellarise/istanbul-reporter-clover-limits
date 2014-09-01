@@ -8,3 +8,4 @@ Feature: Develop clover-style json report with configurable limits
     Given I have non-bundled Javascript files
     When I run coverage report on the files
     Then a report is produced referencing the non-bundled files
+    And an xml report is produced referencing the non-bundled files

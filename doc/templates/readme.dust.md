@@ -6,25 +6,7 @@
 > {description}
 
 
-##Usage 
-
-###Register
-
-Register the report using the istanbul Report factory.
-
-```js
-var cloverLimitsReport = require('{name}');
-var istanbul = require('istanbul');
-istanbul.Report.register(cloverLimitsReport);
-```
-
-###Create
-
-Create a report after istanbul has collected coverage information.
-
-```js
-var report = require('istanbul').Report.create('clover-limits');
-```
+{>readme-usage/}
 
 
 # API
@@ -32,8 +14,4 @@ var report = require('istanbul').Report.create('clover-limits');
 *documented by [jsdoc-to-markdown](https://github.com/75lb/jsdoc-to-markdown)*.
 
 
-# License
-
-MIT License (MIT)
-
-Copyright (c) 2014 {author}
+{>readme-license/}
