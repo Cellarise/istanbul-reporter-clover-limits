@@ -1,22 +1,117 @@
-/* jslint node: true */
 "use strict";
-var mocha = require('gulp-mocha');
-
 /**
- * A gulp build task to run tests.
- * @alias tasks:test
+ * A module to add gulp tasks which run test steps.
+ * @exports tasks/testTasks
+ * @param {Gulp} gulp - The gulp module
+ * @param {Object} context - An object containing the following properties:
+ * @param {String} context.cwd - The current working directory
+ * @param {Object} context.package - The package.json for the module
+ * @param {Array} context.argv - The arguments past to the gulp task
+ * @param {bunyan} context.logger - A logger matching the bunyan API
  */
-module.exports = function(gulp, context) {
+module.exports = function testTasks(gulp, context) {
+  var mocha = require("gulp-mocha");
+  var mkdirp = require("mkdirp");
+  var istanbul = require("gulp-istanbul");
+  var glob = require("glob");
+  var path = require("path");
+  var _ = require("underscore");
+  var logger = context.logger;
+
+  var handleError = function handleError(err) {
+    logger.error(err.toString());
+    this.emit("end"); //jshint ignore:line
+  };
+
+  var test = function test(reporter) {
+    var cwd = context.cwd;
+    var pkg = context.package;
+    var directories = pkg.directories;
+    var sourceGlobStr = directories.lib + "/**/*.js";
+    var scriptPath;
+    //require all library scripts to ensure istanbul picks up
+    _.each(glob.sync(sourceGlobStr), function eachSourceGlobStrFN(value) {
+      scriptPath = path.resolve(process.cwd(), value);
+      try {
+        require(scriptPath); // Make sure all files are loaded to get accurate coverage data
+        logger.info("Loaded: " + scriptPath);
+      } catch (err) {
+        logger.warn("Could not load: " + scriptPath);
+      }
+    });
+
+    //set YADDA_FEATURE_GLOB if argv[2]
+    if (context.argv.length === 2) {
+      process.env.YADDA_FEATURE_GLOB = context.argv[1];
+      logger.info("Set process.env.YADDA_FEATURE_GLOB=" + process.env.YADDA_FEATURE_GLOB);
+    }
+
+    return gulp.src(directories.test + "/test.js")
+      .pipe(mocha({
+        "reporter": reporter,
+        "timeout": 600000
+      }))
+      .on("error", handleError)
+      .pipe(istanbul.writeReports({
+        "coverageVariable": "__cpmCoverage__",
+        "reporters": ["html", require("istanbul-reporter-clover-limits"), "json-summary"],
+        "reportOpts": {
+          "dir": cwd + "/" + directories.reports + "/code-coverage",
+          "watermarks": pkg.config.coverage.watermarks
+        }
+      }));
+  };
+
+  /**
+   * A gulp build task to instrument files.
+   * Istanbul will override the node require() function to redirect to the instrumented files.
+   * @member {Gulp} instrument
+   * @return {through2} stream
+   */
+  gulp.task("instrument", function instrumentTask() {
+    var pkg = context.package;
+    var directories = pkg.directories;
+    var sourceGlobStr = directories.lib + "/**/*.js";
+    /**
+     * Istanbul code coverage will not work if there are tasks containing local references.
+     * For example, var x = require("../../lib/index");
+     * Note: that if gulpfile.js contains `gulp.loadTasks(__dirname);` then all tasks will be loaded
+     * in gulp modules and the tasks directory.
+     * Make sure all these tasks do not require local references as defined above.
+     */
+    return gulp.src(sourceGlobStr)
+      .pipe(istanbul({"coverageVariable": "__cpmCoverage__"}))
+      .pipe(istanbul.hookRequire()); // Force `require` to return covered files
+        // Covering files - note: finish event called when finished (not end event)
+  });
+
+  /**
+   * A gulp build task to run test steps and calculate test coverage.
+   * Test steps results will be output using mocha-bamboo-reporter-bgo reporter.
+   * This task executes the Instrument task as a prerequisite.
+   * @member {Gulp} test_cover
+   * @return {through2} stream
+   */
+  gulp.task("test_cover", ["instrument"], function testCoverTask() {
+    var cwd = context.cwd;
     var pkg = context.package;
     var directories = pkg.directories;
 
-    gulp.task('test', function() {
-        return gulp.src(directories.test + '/test.js')
-            .pipe(mocha({
-                reporter: 'spec'
-            }))
-            .on('error', function(){
-                this.emit('end');
-            });
-    });
+    //results file path for mocha-bamboo-reporter-bgo
+    process.env.MOCHA_FILE = path.join(cwd, directories.reports, "unit-mocha-tests.json");
+    //make sure the Reports directory exists - required for mocha-bamboo-reporter-bgo
+    mkdirp.sync(path.join(cwd, directories.reports));
+    return test("mocha-bamboo-reporter-bgo");
+  });
+
+  /**
+   * A gulp build task to run test steps and calculate test coverage.
+   * Test steps results will be output using spec reporter.
+   * @member {Gulp} test
+   * @return {through2} stream
+   */
+  gulp.task("test", function testTask() {
+    return test("spec");
+  });
+
 };
