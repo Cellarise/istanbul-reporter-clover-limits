@@ -2,11 +2,6 @@
 var R = require("ramda");
 var fs = require("fs");
 var path = require('path');
-var Server = require("leadfoot/Server");
-var server = new Server("http://localhost:4444/wd/hub");
-var Command = require("leadfoot/Command");
-var request = require("request");
-var vasync = require('vasync');
 var childProcess = require('child_process');
 var spawn = childProcess.spawn;
 var exec = childProcess.exec;
@@ -19,27 +14,36 @@ module.exports = function testUtils(opts) {
   var _opts = opts;
   return {
     "browsers": _opts.browsers,
-    //setup Leadfoot Webdriver.js server api
+    //For white-box browser testing setup Request and Leadfoot Webdriver.js server api
+    //The leadfoot and request packages are only required for white-box browser based testing
     "openBrowser": function openBrowser(worldContext, browser, cwd, done) {
+      var Server, server, Command, request;
       if (browser && !worldContext.browser.remote) {
+        Server = require("leadfoot/Server");
+        server = new Server("http://localhost:4444/wd/hub");
+        Command = require("leadfoot/Command");
+        request = require("request");
         loopbackServer = spawn('node', ['server/server.js'], {
           'cwd': cwd,
           'env': {'path': process.env.path}
         });
         server.createSession(browser)
-          .then(function addSessionToWorld(session) {
-            worldContext.browser.request = request;
-            worldContext.browser.remote = new Command(session);
-          })
-          .finally(done);
+            .then(function addSessionToWorld(session) {
+              worldContext.browser.request = request;
+              worldContext.browser.remote = new Command(session);
+            })
+            .finally(done);
       } else {
         done();
       }
     },
     //get coverage information and teardown Leadfoot Webdriver.js server api
+    //The vasync package is only required for white-box browser based testing
     "closeBrowser": function closeBrowser(worldContext, browser, done) {
+      var vasync;
       if (browser && worldContext.browser.remote) {
-        request(_opts.url + '/coverage', function handler(error, response, body) {
+        vasync = require('vasync');
+        worldContext.browser.request(_opts.url + '/coverage', function handler(error, response, body) {
           if (!error && response.statusCode === 200) {
             processCoverage(JSON.parse(body.replace(/c:/g, 'C:')));
           }
@@ -47,14 +51,14 @@ module.exports = function testUtils(opts) {
             'funcs': [
               function f1(callback) {
                 worldContext.browser.remote
-                  .execute('return window.__coverage__')
-                  .then(processCoverage)
-                  .finally(function sessionQuit() {
-                    worldContext.browser.remote.quit()
-                      .finally(function quit(){
-                        callback();
-                      });
-                  });
+                    .execute('return window.__coverage__')
+                    .then(processCoverage)
+                    .finally(function sessionQuit() {
+                      worldContext.browser.remote.quit()
+                          .finally(function quit(){
+                            callback();
+                          });
+                    });
               },
               function f2(callback) {
                 exec('taskkill /pid ' + loopbackServer.pid + ' /T /F', callback);

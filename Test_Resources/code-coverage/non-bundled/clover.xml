@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1432203885150" clover="3.2.0">
-	<project timestamp="1432203885150"  name="All Files" >
+<coverage generated="1432446670507" clover="3.2.0">
+	<project timestamp="1432446670507"  name="All Files" >
 		<metrics statements="9"  coveredstatements="9"  conditionals="2"  coveredconditionals="1"  methods="0"  coveredmethods="0"  elements="11"  coveredelements="10"  complexity="0"  packages="1"  files="2"  classes="2"  loc="16"  ncloc="12" />
 		<package name="non-bundled" >
 			<metrics statements="9"  coveredstatements="9"  conditionals="2"  coveredconditionals="1"  methods="0"  coveredmethods="0" />
-			<file name="non-bundled-file-1.js"  path="C:\bamboo\SRC\131073\CELLARISE-MDCOVSM-JOB1\Test_Resources\resources\non-bundled\non-bundled-file-1.js" >
+			<file name="non-bundled-file-1.js"  path="C:\bamboo\SRC\32604161\CELLARISE-MDCOVSM-JOB1\Test_Resources\resources\non-bundled\non-bundled-file-1.js" >
 				<metrics statements="4"  coveredstatements="4"  conditionals="0"  coveredconditionals="0"  methods="0"  coveredmethods="0" />
 				<line num="2"  count="1"  type="stmt" />
 				<line num="3"  count="1"  type="stmt" />
 				<line num="5"  count="10"  type="stmt" />
 				<line num="7"  count="1"  type="stmt" />
 			</file>
-			<file name="non-bundled-file-2.js"  path="C:\bamboo\SRC\131073\CELLARISE-MDCOVSM-JOB1\Test_Resources\resources\non-bundled\non-bundled-file-2.js" >
+			<file name="non-bundled-file-2.js"  path="C:\bamboo\SRC\32604161\CELLARISE-MDCOVSM-JOB1\Test_Resources\resources\non-bundled\non-bundled-file-2.js" >
 				<metrics statements="5"  coveredstatements="5"  conditionals="2"  coveredconditionals="1"  methods="0"  coveredmethods="0" />
 				<line num="2"  count="1"  type="stmt" />
 				<line num="3"  count="1"  type="stmt" />

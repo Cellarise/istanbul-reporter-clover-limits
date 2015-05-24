@@ -1,6 +1,6 @@
-##Usage 
+## Usage
 
-###Register
+### Register
 
 Register the report using the istanbul Report factory.
 
@@ -10,7 +10,7 @@ var istanbul = require('istanbul');
 istanbul.Report.register(cloverLimitsReport);
 ```
 
-###Create
+### Create
 
 Create a report after istanbul has collected coverage information.
 

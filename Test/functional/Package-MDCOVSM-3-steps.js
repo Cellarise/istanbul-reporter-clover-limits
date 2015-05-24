@@ -5,7 +5,7 @@ module.exports = (function testSuite() {
   var path = require("path");
   var gulp = require("gulp");
   var glob = require("glob");
-  var _ = require("underscore");
+  var R = require("ramda");
   var English = require("yadda").localisation.English;
   var assert = require("assert");
   var istanbul = require("gulp-istanbul");
@@ -32,7 +32,7 @@ module.exports = (function testSuite() {
         .on("finish", function onFinish() {
           var scriptPath;
           //require all library scripts to ensure istanbul picks up
-          _.each(glob.sync("Test_Resources/resources/non-bundled/**/*.js"), function globCallback(value) {
+          R.forEach(function globCallback(value) {
             scriptPath = path.resolve(process.cwd(), value);
             try {
               require(scriptPath); // Make sure all files are loaded to get accurate coverage data
@@ -40,7 +40,7 @@ module.exports = (function testSuite() {
             } catch (err) {
               logger.error("Could not load: " + scriptPath);
             }
-          });
+          }, glob.sync("Test_Resources/resources/non-bundled/**/*.js"));
           gulp.src("Test_Resources/resources/non-bundled/**/*.js")
             .pipe(istanbul.writeReports({
               "coverageVariable": COVERAGE_VARIABLE,
