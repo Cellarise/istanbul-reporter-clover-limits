@@ -2,7 +2,10 @@
 [![view on npm](http://img.shields.io/npm/v/istanbul-reporter-clover-limits.svg?style=flat)](https://www.npmjs.org/package/istanbul-reporter-clover-limits)
 [![npm module downloads per month](http://img.shields.io/npm/dm/istanbul-reporter-clover-limits.svg?style=flat)](https://www.npmjs.org/package/istanbul-reporter-clover-limits)
 [![Dependency status](https://david-dm.org/Cellarise/istanbul-reporter-clover-limits.svg?style=flat)](https://david-dm.org/Cellarise/istanbul-reporter-clover-limits)
-[![Coverage](https://img.shields.io/badge/coverage-92%25_skipped:19%25-green.svg?style=flat)](https://www.npmjs.org/package/istanbul-reporter-clover-limits)
+[![Build Status](https://travis-ci.org/Cellarise/istanbul-reporter-clover-limits.svg?branch=master)](https://travis-ci.org/Cellarise/istanbul-reporter-clover-limits)
+[![Code
+Climate](https://codeclimate.com/github/Cellarise/istanbul-reporter-clover-limits/badges/gpa.svg)](https://codeclimate.com/github/Cellarise/istanbul-reporter-clover-limits)
+[![Test Coverage](https://codeclimate.com/github/Cellarise/istanbul-reporter-clover-limits/badges/coverage.svg)](https://codeclimate.com/github/Cellarise/istanbul-reporter-clover-limits/badges/coverage.svg)
 
 > An istanbul report implementation that produces a clover xml file and summary test coverage json file with configurable watermarks.
 
@@ -104,6 +107,18 @@ and it is truly done.
     <th style="width:80px;text-align:left;">ID</th>
     <th style="text-align:left;">Summary</th>
   </tr>
+    
+<tr>
+        <td colspan=4><strong>Version: 0.1.8 - released 2015-08-25</strong></td>
+      </tr>
+        
+<tr>
+            <td style="width:20px;padding:0;margin:0;text-align:center;"><img src="https://jira.cellarise.com:80/secure/viewavatar?size=xsmall&amp;avatarId=10419&amp;avatarType=issuetype"/></td>
+            <td style="width:80px;text-align:left;">Non-functional</td>
+            <td style="width:80px;text-align:left;">MDCOVSM-18</td>
+            <td><p>Package: Update development dependencies and configure for travis-ci</p><p></p></td>
+          </tr>
+        
     
 <tr>
         <td colspan=4><strong>Version: 0.1.7 - released 2015-05-24</strong></td>
@@ -250,5 +265,5 @@ MIT License (MIT). All rights not explicitly granted in the license are reserved
 
 Copyright (c) 2015 John Barry
 ## Dependencies
-[abbrev@1.0.6](&quot;git+ssh://git@github.com/isaacs/abbrev-js&quot;) - &quot;ISC&quot;, [amdefine@0.1.0](&quot;https://github.com/jrburke/amdefine&quot;) - [&quot;BSD&quot;,&quot;MIT&quot;], [argparse@1.0.2](&quot;https://github.com/nodeca/argparse&quot;) - &quot;MIT&quot;, [async@0.2.10](&quot;https://github.com/caolan/async&quot;) - [&quot;MIT&quot;], [async@0.9.2](&quot;git+https://github.com/caolan/async&quot;) - &quot;MIT&quot;, [async@1.0.0](&quot;git+https://github.com/caolan/async&quot;) - &quot;MIT&quot;, [cli-table@0.3.1](&quot;https://github.com/Automattic/cli-table&quot;) - &quot;MIT*&quot;, [colors@1.0.3](&quot;http://github.com/Marak/colors.js&quot;) - &quot;MIT&quot;, [commander@2.5.1](&quot;https://github.com/tj/commander.js&quot;) - &quot;MIT&quot;, [core-util-is@1.0.1](&quot;https://github.com/isaacs/core-util-is&quot;) - &quot;MIT&quot;, [deep-is@0.1.3](&quot;http://github.com/thlorenz/deep-is&quot;) - &quot;MIT&quot;, [escodegen@1.6.1](&quot;http://github.com/estools/escodegen&quot;) - [&quot;BSD&quot;], [esprima@1.2.5](&quot;http://github.com/ariya/esprima&quot;) - [&quot;BSD&quot;], [esprima@2.1.0](&quot;https://github.com/jquery/esprima&quot;) - [&quot;BSD&quot;], [esprima@2.2.0](&quot;https://github.com/jquery/esprima&quot;) - [&quot;BSD&quot;], [estraverse@1.9.3](&quot;http://github.com/estools/estraverse&quot;) - [&quot;BSD&quot;], [esutils@1.1.6](&quot;http://github.com/Constellation/esutils&quot;) - [&quot;BSD&quot;], [fast-levenshtein@1.0.6](&quot;https://github.com/hiddentao/fast-levenshtein&quot;) - &quot;MIT&quot;, [fileset@0.1.5](&quot;https://github.com/mklabs/node-fileset&quot;) - [&quot;MIT&quot;], [glob@3.2.11](&quot;https://github.com/isaacs/node-glob&quot;) - &quot;BSD&quot;, [graceful-fs@2.0.3](&quot;https://github.com/isaacs/node-graceful-fs&quot;) - &quot;BSD&quot;, [handlebars@3.0.0](&quot;https://github.com/wycats/handlebars.js&quot;) - &quot;MIT&quot;, [inherits@2.0.1](&quot;https://github.com/isaacs/inherits&quot;) - &quot;ISC&quot;, [isarray@0.0.1](&quot;https://github.com/juliangruber/isarray&quot;) - &quot;MIT&quot;, [istanbul-reporter-clover-limits@0.0.0](&quot;https://github.com/Cellarise/istanbul-reporter-clover-limits&quot;) - &quot;MIT License (MIT)&quot;, [istanbul@0.3.14](&quot;https://github.com/gotwarlost/istanbul&quot;) - &quot;BSD-3-Clause&quot;, [js-yaml@3.3.1](&quot;https://github.com/nodeca/js-yaml&quot;) - &quot;MIT&quot;, [levn@0.2.5](&quot;https://github.com/gkz/levn&quot;) - [&quot;MIT&quot;], [lodash@3.9.1](&quot;git+https://github.com/lodash/lodash&quot;) - &quot;MIT&quot;, [lru-cache@2.6.4](&quot;https://github.com/isaacs/node-lru-cache&quot;) - &quot;ISC&quot;, [minimatch@0.2.14](&quot;https://github.com/isaacs/minimatch&quot;) - &quot;MIT&quot;, [minimatch@0.3.0](&quot;https://github.com/isaacs/minimatch&quot;) - &quot;MIT&quot;, [minimatch@0.4.0](&quot;https://github.com/isaacs/minimatch&quot;) - &quot;MIT&quot;, [minimist@0.0.10](&quot;https://github.com/substack/minimist&quot;) - &quot;MIT&quot;, [minimist@0.0.8](&quot;https://github.com/substack/minimist&quot;) - &quot;MIT&quot;, [mkdirp@0.5.1](&quot;git+https://github.com/substack/node-mkdirp&quot;) - &quot;MIT&quot;, [nopt@3.0.2](&quot;git+ssh://git@github.com/isaacs/nopt&quot;) - &quot;ISC&quot;, [once@1.3.2](&quot;https://github.com/isaacs/once&quot;) - &quot;ISC&quot;, [optimist@0.3.7](&quot;http://github.com/substack/node-optimist&quot;) - &quot;MIT/X11&quot;, [optimist@0.6.1](&quot;http://github.com/substack/node-optimist&quot;) - &quot;MIT/X11&quot;, [optionator@0.5.0](&quot;https://github.com/gkz/optionator&quot;) - [&quot;MIT&quot;], [prelude-ls@1.1.2](&quot;https://github.com/gkz/prelude-ls&quot;) - [&quot;MIT&quot;], [readable-stream@1.0.33](&quot;https://github.com/isaacs/readable-stream&quot;) - &quot;MIT&quot;, [readdirp@1.3.0](&quot;https://github.com/thlorenz/readdirp&quot;) - &quot;MIT&quot;, [resolve@1.1.6](&quot;https://github.com/substack/node-resolve&quot;) - &quot;MIT&quot;, [sigmund@1.0.1](&quot;https://github.com/isaacs/sigmund&quot;) - &quot;ISC&quot;, [sloc@0.1.9](&quot;https://github.com/flosse/sloc&quot;) - &quot;MIT&quot;, [source-map@0.1.43](&quot;http://github.com/mozilla/source-map&quot;) - [&quot;BSD&quot;], [sprintf-js@1.0.2](&quot;https://github.com/alexei/sprintf.js&quot;) - &quot;BSD-3-Clause&quot;, [string_decoder@0.10.31](&quot;https://github.com/rvagg/string_decoder&quot;) - &quot;MIT&quot;, [supports-color@1.3.1](&quot;https://github.com/sindresorhus/supports-color&quot;) - &quot;MIT&quot;, [type-check@0.3.1](&quot;https://github.com/gkz/type-check&quot;) - [&quot;MIT&quot;], [uglify-js@2.3.6](&quot;https://github.com/mishoo/UglifyJS2&quot;) - &quot;MIT*&quot;, [which@1.0.9](&quot;https://github.com/isaacs/node-which&quot;) - &quot;ISC&quot;, [wordwrap@0.0.3](&quot;https://github.com/substack/node-wordwrap&quot;) - &quot;MIT&quot;, [wrappy@1.0.1](&quot;https://github.com/npm/wrappy&quot;) - &quot;ISC&quot;, 
+[istanbul-reporter-clover-limits@0.1.7](&quot;https://github.com/Cellarise/istanbul-reporter-clover-limits&quot;) - &quot;MIT License (MIT)&quot;, 
 *documented by [npm-licenses](http://github.com/AceMetrix/npm-license.git)*.
