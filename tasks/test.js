@@ -18,6 +18,7 @@ module.exports = function testTasks(gulp, context) {
   var path = require("path");
   var R = require("ramda");
   var logger = context.logger;
+  var COVERAGE_VAR = "__cpmCoverage__";
 
   var handleError = function handleError(err) {
     logger.error(err.toString());
@@ -60,11 +61,22 @@ module.exports = function testTasks(gulp, context) {
       }))
       .on("error", handleError)
       .pipe(istanbul.writeReports({
-        "coverageVariable": "__cpmCoverage__",
+        "coverageVariable": COVERAGE_VAR,
         "reporters": ["html", "lcov", require("istanbul-reporter-clover-limits"), "json-summary"],
         "reportOpts": {
           "dir": cwd + "/" + directories.reports + "/code-coverage",
           "watermarks": pkg.config.coverage.watermarks
+        }
+      }))
+      .pipe(istanbul.enforceThresholds({
+        "coverageVariable": COVERAGE_VAR,
+        "thresholds": {
+          "each": {
+            "statements": pkg.config.coverage.watermarks.statements[0],
+            "branches": pkg.config.coverage.watermarks.branches[0],
+            "lines": pkg.config.coverage.watermarks.lines[0],
+            "functions": pkg.config.coverage.watermarks.functions[0]
+          }
         }
       }));
   };
@@ -87,7 +99,10 @@ module.exports = function testTasks(gulp, context) {
      * Make sure all these tasks do not require local references as defined above.
      */
     return gulp.src(sourceGlobStr)
-      .pipe(istanbul({"coverageVariable": "__cpmCoverage__", "includeUntested": true}))
+      .pipe(istanbul({
+        "coverageVariable": COVERAGE_VAR,
+        "includeUntested": true
+      }))
       .pipe(istanbul.hookRequire()); // Force `require` to return covered files
         // Covering files - note: finish event called when finished (not end event)
   });
@@ -108,6 +123,9 @@ module.exports = function testTasks(gulp, context) {
     process.env.MOCHA_FILE = path.join(cwd, directories.reports, "unit-mocha-tests.json");
     //make sure the Reports directory exists - required for mocha-bamboo-reporter-bgo
     mkdirp.sync(path.join(cwd, directories.reports));
+    if (process.env.CI) {
+      return test("spec");
+    }
     return test("mocha-bamboo-reporter-bgo");
   });
 
