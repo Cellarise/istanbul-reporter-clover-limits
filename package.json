@@ -2,15 +2,15 @@
   "author": "John Barry",
   "name": "istanbul-reporter-clover-limits",
   "description": "An istanbul report implementation that produces a clover xml file and summary test coverage json file with configurable watermarks.",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "repository": {
     "type": "git",
     "url": "git://github.com/Cellarise/istanbul-reporter-clover-limits.git"
   },
   "config": {
     "projectCode": "MDCOVSM",
-    "build": "40",
-    "buildTimestamp": "2015-08-25T11:41:11.890Z",
+    "build": "42",
+    "buildTimestamp": "2015-11-13T08:57:34.482Z",
     "adminEmail": "admin@cellarise.com",
     "coverage": {
       "codeClimate": true,
