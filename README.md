@@ -109,6 +109,18 @@ and it is truly done.
   </tr>
     
 <tr>
+        <td colspan=4><strong>Version: 0.1.10 - released 2015-11-27</strong></td>
+      </tr>
+        
+<tr>
+            <td style="width:20px;padding:0;margin:0;text-align:center;"><img src="https://jira.cellarise.com:80/secure/viewavatar?size=xsmall&amp;avatarId=10419&amp;avatarType=issuetype"/></td>
+            <td style="width:80px;text-align:left;">Non-functional</td>
+            <td style="width:80px;text-align:left;">MDCOVSM-20</td>
+            <td><p>Package: Update package dependencies</p><p></p></td>
+          </tr>
+        
+    
+<tr>
         <td colspan=4><strong>Version: 0.1.9 - released 2015-11-13</strong></td>
       </tr>
         
@@ -277,5 +289,6 @@ MIT License (MIT). All rights not explicitly granted in the license are reserved
 
 Copyright (c) 2015 John Barry
 ## Dependencies
-[istanbul-reporter-clover-limits@0.1.8](&quot;https://github.com/Cellarise/istanbul-reporter-clover-limits&quot;) - &quot;MIT License (MIT)&quot;, 
+[istanbul-reporter-clover-limits@0.1.9](&quot;https://github.com/Cellarise/istanbul-reporter-clover-limits&quot;) - &quot;MIT License (MIT)&quot;, 
 *documented by [npm-licenses](http://github.com/AceMetrix/npm-license.git)*.
+
