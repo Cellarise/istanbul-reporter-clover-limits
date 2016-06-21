@@ -9,8 +9,8 @@
   },
   "config": {
     "projectCode": "MDCOVSM",
-    "build": "52",
-    "buildTimestamp": "2016-04-10T14:03:45.529Z",
+    "build": "54",
+    "buildTimestamp": "2016-06-21T14:04:02.035Z",
     "adminEmail": "admin@cellarise.com",
     "coverage": {
       "codeClimate": true,
