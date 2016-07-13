@@ -9,6 +9,18 @@
   </tr>
     
 <tr>
+        <td colspan=4><strong>Version: 0.1.14 - released 2016-07-14</strong></td>
+      </tr>
+        
+<tr>
+            <td style="width:20px;padding:0;margin:0;text-align:center;"><img src="https://jira.nhvr.net:80/secure/viewavatar?size=xsmall&amp;avatarId=10418&amp;avatarType=issuetype"/></td>
+            <td style="width:80px;text-align:left;">Non-functional</td>
+            <td style="width:80px;text-align:left;">MDCOVSM-24</td>
+            <td><p>Package: Update package dependencies</p><p></p></td>
+          </tr>
+        
+    
+<tr>
         <td colspan=4><strong>Version: 0.1.13 - released 2016-06-22</strong></td>
       </tr>
         
